@@ -12,6 +12,11 @@ export default function Register() {
       const password=useRef();
       const passwordAgain=useRef();
       const navigate= useNavigate();
+
+      const handleLoginbutton =()=>{
+              navigate("/login")
+      }
+      
   
        const handleClick=async(e)=>{
            e.preventDefault();
@@ -52,7 +57,7 @@ export default function Register() {
                   <input placeholder="Password" type="password" required ref={password} className="loginInput" />
                   <input placeholder="Confirm Password" type="password" minLength="6" required ref={passwordAgain} className="loginInput" />
                   <button className="loginButton">Sign Up</button>
-                  <button className="loginRegisterButton">Log into account</button>
+                  <button className="loginRegisterButton" onClick={handleLoginbutton}>Log into account</button>
             </form>
         </div>
       </div>

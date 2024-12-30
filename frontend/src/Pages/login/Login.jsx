@@ -3,8 +3,11 @@ import {useContext, useRef} from "react";
 import {loginCall} from "../../apiCalls"
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from '@mui/material';
+import {useNavigate} from "react-router-dom";
 
 export default function Login() {
+
+  const navigate= useNavigate();
 
   const email=useRef();
   const password=useRef();
@@ -16,7 +19,12 @@ export default function Login() {
   loginCall({ email:email.current.value, password:password.current.value } ,dispatch)
   
   }
-  console.log(user);
+  console.log(" user state in login " ,user);
+
+  const handleCNA=()=>{
+    navigate("/register")
+
+  }
 
 
    
@@ -36,7 +44,7 @@ export default function Login() {
                   <input placeholder="Password" minLength="6" required  type="password" className="loginInput" ref={password} />
                   <button className="loginButton" type="submit" disabled={isFetching} >{isFetching ?<CircularProgress color="white" size="20px"/>:"Log In"}</button>
                   <span className="loginForgot">Forgot Password</span>
-                  <button className="loginRegisterButton">{isFetching ?<CircularProgress color="white" size="20px" />:"Create a New Account"}</button>
+                  <button onClick={handleCNA} className="loginRegisterButton">{isFetching ?<CircularProgress color="white" size="20px" />:"Create a New Account"}</button>
             </form>
         </div>
       </div>
