@@ -95,8 +95,10 @@ Contributions are welcome! If you'd like to contribute, please:
 2. Create a new branch for your feature/bugfix.
 3. Submit a pull request with a detailed description of your changes.
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+
+## Contributors
+- Saksham Singh ([GitHub Profile](https://github.com/saksham136))
 
 ## Acknowledgments
 Special thanks to all contributors and open-source libraries used in this project.
+
